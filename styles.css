@@ -1,0 +1,57 @@
+h1 {
+  margin: 30px 30px;
+}
+
+.form-control {
+  width: 600px;
+}
+.sign-up {
+  /* display: flex; */
+}
+#btn {
+  position: absolute;
+  right: 90px;
+  top: 100px;
+  display: flex;
+  justify-content: space-between;
+
+  /* width: 150px; */
+}
+
+.city {
+  margin-top: 50px;
+}
+.weather {
+  /* color: gray; */
+  /* display: inline; */
+  margin: 0;
+  font-weight: bold;
+}
+.hum {
+  text-align: center;
+}
+.units {
+  position: absolute;
+  top: -5;
+  text-decoration: none;
+}
+p {
+  color: gray;
+  margin: 0;
+  /* margin-top: 40px; */
+}
+.grid {
+  margin-top: 50px;
+  text-align: center;
+}
+.degree {
+  margin-top: 20px;
+  color: red;
+}
+span {
+  font-weight: bold;
+}
+.footer {
+  margin-top: 100px;
+  text-align: center;
+}
