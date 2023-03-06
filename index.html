@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <h1>shecodes</h1>
-      <h1>shecodes</h1>
+
       <form id="sign-up">
         <div class="row">
           <div class="col-6">
@@ -174,7 +174,7 @@
       // q=${city}&
 
       function weather(response) {
-        console.log(response.data);
+        // console.log(response.data);
         // let city = document.querySelector("#input-text").value;
         let realm = document.querySelector(".country");
         let humidity = document.querySelector(".humidity");
@@ -193,12 +193,13 @@
 
       // const nation = () => axios.get(apiUrl).then(weather);
 
-      function nation(city) {
-        // e.preventDefault();
+      function nation(event) {
+        event.preventDefault();
         // console.log("happy");
         let apiKey = "d446fa0ebd9dc77a04d4d3078efe036c";
         // let city = "london";
-        // let city = document.querySelector("#input-text").value;
+        let city = document.querySelector("#input-text").value;
+
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(weather);
       }
@@ -213,19 +214,20 @@
         let apiKey = "d446fa0ebd9dc77a04d4d3078efe036c";
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units=metric&lat=${lat}&lon=${lon}`;
-        axios.get(apiUrl).then(weather);
+        let apiURl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+        axios.get(apiURl).then(weather);
       }
 
       function getLocation(event) {
+        event.preventDefault();
         navigator.geolocation.getCurrentPosition(searchLocation);
       }
 
       let btn = document.querySelector("#sign-up");
-      btn.addEventListener("submit", nation());
+      btn.addEventListener("submit", nation);
 
       let current = document.querySelector("#button");
-      current.addEventListener("click", getLocation());
+      current.addEventListener("click", getLocation);
     </script>
   </body>
 </html>
